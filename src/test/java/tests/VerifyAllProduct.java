@@ -26,13 +26,14 @@ public class VerifyAllProduct extends TestBase {
 
         // Step 6: The products list is visible
         driver.findElement(By.xpath("//h2[@class='title text-center']")).isDisplayed();
-
+        jsScrolltoElement(driver.findElement(By.xpath("//h2[@class='title text-center']")));
         // Step 7: Click on 'View Product' of first product
-        driver.findElement(By.xpath("//div[@class='col-sm-9 padding-right']//div[2]//div[1]//div[2]//ul[1]//li[1]//a[1]")).click();
+        driver.findElement(By.xpath("//div[@class='col-sm-9 padding-right']//div[2]//div[1]//div[2]//ul[1]//li[1]//a[1]//i[1]")).click();
 
         // Step 8: User is landed to product detail page
-        String expectedUrl3 = "https://www.automationexercise.com/product_details/1";
-        Assertions.assertTrue(expectedUrl3.contains(driver.getCurrentUrl()));
+        String expectedUrl3 = "https://automationexercise.com/product_details/1";
+        Assertions.assertTrue(expectedUrl3.equals(driver.getCurrentUrl()));
+        System.out.println(driver.getCurrentUrl());
 
         // Step 9: Verify that detail is visible: product name, category, price, availability, condition, brand
         driver.findElement(By.xpath("//h2[normalize-space()='Blue Top']")).isDisplayed();
