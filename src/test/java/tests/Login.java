@@ -12,9 +12,11 @@ public class Login extends TestBase {
         // 1. Launch browser
         // 2. Navigate to url 'http://automationexercise.com'
         driver.get("http://automationexercise.com");
+        driver.findElement(By.xpath("//p[@class=\"fc-button-label\"]")).click();
 
         // 3. Verify that home page is visible successfully
         String title = driver.getTitle();
+        Assertions.assertNotNull(title);
         Assertions.assertTrue(title.contains("Automation Exercise"));
 
         // 4. Click on 'Signup / Login' button
@@ -35,7 +37,7 @@ public class Login extends TestBase {
         Assertions.assertTrue(logIn.contains("seval"));
 
         // 9. Click 'Delete Account' button
-        driver.findElement(By.xpath("//a[normalize-space()='Delete Account']"));
+        driver.findElement(By.xpath("//a[@href='/delete_account']")).click();
 
         // 10. Verify that 'ACCOUNT DELETED!' is visible
         driver.findElement(By.xpath("//b[normalize-space()='Account Deleted!']")).isDisplayed();

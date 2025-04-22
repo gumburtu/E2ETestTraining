@@ -13,7 +13,7 @@ public class RegisterUser extends TestBase {
         //1. Launch browser
         //2. Navigate to url 'http://automationexercise.com'
         driver.get("http://automationexercise.com");
-        waitForSecond(2);
+        driver.findElement(By.xpath("//p[@class=\"fc-button-label\"]")).click();
 
         //3. Verify that home page is visible successfully
         String expectedUrl = "https://automationexercise.com/";

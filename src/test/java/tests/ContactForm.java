@@ -12,6 +12,8 @@ public class ContactForm extends TestBase {
         // Launch browser
         // Navigate to url 'http://automationexercise.com'
         driver.get("http://automationexercise.com");
+        driver.findElement(By.xpath("//p[@class=\"fc-button-label\"]")).click();
+
 
         // Verify that home page is visible successfully
         String title = driver.getTitle();
