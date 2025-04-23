@@ -85,7 +85,7 @@ public class AddProductsCart extends TestBase {
         // Verify overall total price
         double expectedTotalPrice = (price1 * quantity1) + (price2 * quantity2);
         double actualTotalPrice = 900;
-        Assertions.assertEquals(expectedTotalPrice, actualTotalPrice, "Total cart price verification failed");
+        Assertions.assertEquals(actualTotalPrice, expectedTotalPrice, "Total cart price verification failed");
 
     }
 }
