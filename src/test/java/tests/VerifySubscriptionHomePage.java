@@ -16,7 +16,7 @@ public class VerifySubscriptionHomePage extends TestBase {
 
         // 3. Verify that the home page is visible successfully
         String expectedUrl = "https://automationexercise.com/";
-        Assertions.assertTrue(expectedUrl.equals(driver.getCurrentUrl()));
+        Assertions.assertEquals(expectedUrl, driver.getCurrentUrl());
 
         // 4. Scroll down to the footer
         jsScrolltoElement(driver.findElement(By.xpath("//h2[normalize-space()='Subscription']")));
