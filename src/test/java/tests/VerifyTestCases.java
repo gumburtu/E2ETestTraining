@@ -15,13 +15,13 @@ public class VerifyTestCases extends TestBase {
 
         // 3. Verify that home page is visible successfully
         String expectedUrl = "https://automationexercise.com/";
-        Assertions.assertTrue(expectedUrl.equals(driver.getCurrentUrl()));
+        Assertions.assertEquals(expectedUrl, driver.getCurrentUrl());
 
         // 4. Click on 'Test Cases' button
         driver.findElement(By.xpath("//a[contains(text(),'Test Cases')]")).click();
 
         // 5. Verify user is navigated to test cases page successfully
         String expectedUrl2 = "https://automationexercise.com/test_cases";
-        Assertions.assertTrue(expectedUrl2.equals(driver.getCurrentUrl()));
+        Assertions.assertEquals(expectedUrl2, driver.getCurrentUrl());
     }
 }
