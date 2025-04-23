@@ -101,12 +101,14 @@ public class PlaceOrderRegisterWhileCheckout extends TestBase {
         driver.findElement(By.xpath("//a[@class='btn btn-default check_out']")).click();
 
         // 14. Verify Address Details and Review Your Order section
-        driver.findElement(By.xpath("//h2[normalize-space()='Address Details']")).isDisplayed()
+        driver.findElement(By.xpath("//h2[normalize-space()='Address Details']")).isDisplayed();
         driver.findElement(By.xpath("//h2[normalize-space()='Review Your Order']")).isDisplayed();
 
         // 15. Enter a description in the comment text area and click the 'Place Order' button
         String text = faker.harryPotter().character();
         driver.findElement(By.xpath("//textarea[@name='message']")).sendKeys(text);
+        Actions actions2 = new Actions(driver);
+        actions2.moveToElement(driver.findElement(By.xpath("//h2[normalize-space()='Subscription']"))).perform();
         driver.findElement(By.xpath("//a[@class='btn btn-default check_out']")).click();
 
         // 16. Enter payment details: Name on Card, Card Number, CVC, Expiration Date
@@ -127,7 +129,7 @@ public class PlaceOrderRegisterWhileCheckout extends TestBase {
         driver.findElement(By.xpath("//button[@id='submit']")).click();
 
         // 18. Verify success message 'Your order has been placed successfully!' is displayed
-        driver.findElement(By.xpath("//div[contains(text(),'Your order has been placed successfully!')]")).isDisplayed();
+        driver.findElement(By.xpath("//p[normalize-space()='Congratulations! Your order has been confirmed!']")).isDisplayed();
 
         // 19. Click the 'Delete Account' button
         driver.findElement(By.xpath("//a[normalize-space()='Delete Account']")).click();
