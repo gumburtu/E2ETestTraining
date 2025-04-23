@@ -12,7 +12,7 @@ public class VerifyProductQuantityCart extends TestBase {
     void verifyProductQuantityCart() {
         // 1. Tarayıcıyı başlat ve belirtilen URL'ye git
         driver.get("http://automationexercise.com");
-        driver.findElement(By.xpath("//p[@class=\"fc-button-label\"]")).click(); // Çerez onay butonuna tıkla
+        driver.findElement(By.xpath("//p[@class=\"fc-button-label\"]")).click();
 
         // 2. Ana sayfanın başarıyla açıldığını doğrula
         String expectedUrl = "https://automationexercise.com/";
