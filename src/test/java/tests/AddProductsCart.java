@@ -20,7 +20,7 @@ public class AddProductsCart extends TestBase {
 
         // 3. Verify that the home page is visible successfully
         String expectedUrl = "https://automationexercise.com/";
-        Assertions.assertTrue(expectedUrl.equals(driver.getCurrentUrl()));
+        Assertions.assertEquals(expectedUrl, driver.getCurrentUrl());
 
         // 4. Click the 'Products' button
         driver.findElement(By.xpath("//a[@href='/products']")).click();
